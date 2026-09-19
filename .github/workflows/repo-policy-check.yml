@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: shipsolid/repo-policy@v0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_POLICY_TOKEN }}
         with:
           config: .github/repository-policy.yml
           mode: audit
