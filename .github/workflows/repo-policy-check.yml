@@ -1,0 +1,17 @@
+name: repo-policy check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shipsolid/repo-policy@v0
+        with:
+          config: .github/repository-policy.yml
+          mode: audit
